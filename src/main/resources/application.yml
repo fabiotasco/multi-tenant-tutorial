@@ -9,6 +9,8 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
   datasource:
     initialization-mode: never
+  flyway:
+    enabled: false
 
 tenant-context:
   datasources:
