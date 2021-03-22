@@ -1,0 +1,33 @@
+spring:
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: none
+      use-new-id-generator-mappings: false
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  datasource:
+    initialization-mode: never
+
+tenant-context:
+  datasources:
+    vexty:
+      url: jdbc:mysql://localhost:3306/vexty?createDatabaseIfNotExist=true
+      username: root
+      password: 12345678
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    vivest:
+      url: jdbc:mysql://localhost:3306/vivest?createDatabaseIfNotExist=true
+      username: root
+      password: 12345678
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+  level:
+    ROOT: info
+    br.com.f2: debug
+    org.springframework.web: info
+    org.springframework.jdbc.datasource: info
+    org.hibernate.SQL: off
+    org.hibernate.type.descriptor.sql.BasicBinder: off
